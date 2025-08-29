@@ -15,12 +15,23 @@ const createWindow = () => {
       preload: path.join(__dirname, 'preload.js'),
     },
   });
+  //MAIN WINDOW CREATED
 
-  // and load the index.html of the app.
+
+  //load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+
+  mainWindow.webContents.on('did-finish-load', () =>
+  {
+    //Updating spellchecker to accept Bokmal
+    //No nynorsk, nn, in Chromium. (May be bundled)
+    //May not work for MacOS. 
+    mainWindow.webContents.session.setSpellCheckerLanguages(['en-US', 'nb'])
+  })
+
+  // Open the DevTools. (Changed for now)
+  //mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

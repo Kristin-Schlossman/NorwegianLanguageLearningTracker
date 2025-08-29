@@ -1,7 +1,48 @@
-body {
+/*maybe change h1 p*/
+
+textarea:focus
+{
+  outline-color: #A6703A;
+}
+
+h1
+{
+  color:#673D20;
+}
+
+p
+{
+  color:#673D20;
+}
+
+body 
+{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
+  background-color: #D8D0C7;
+}
+
+.text-input
+{
+  background-color: #E5E6E5;
+  color:#673D20;
+  border-color: #A6703A;
+  width: 43ch;
+  field-sizing: content;
+  overflow: hidden;
+}
+
+.analyze-btn
+{
+  background-color: #A6703A;
+  color: #E5E6E5;
+  border-color: #E5E6E5;
+}
+
+.analyze-btn:focus
+{
+  outline-color:#673D20;
 }
